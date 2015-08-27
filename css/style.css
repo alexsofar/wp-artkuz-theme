@@ -1,0 +1,41 @@
+.user-container {
+	max-width: 1024px;
+	margin: 0px auto 0px auto;
+}
+
+#header {
+	background: #ccc;
+	height: 448px;
+}
+
+#sidebar {
+	background: #666;
+	width: 23.076923076923077%;
+	height: 320px;
+	float: right;
+	margin: 15px 0px 15px 0;
+	padding: 5px;
+}
+
+#footer {
+	background: #333;
+	color: #fff;
+	height: 50px;
+}
+
+#middle-content {
+	background: #EAEAEA;
+/*	width: 76.358974%;*/
+	height: 700px;
+	margin: 15px 0px 15px 0;
+}
+
+.logo {
+	background: rgba(114, 114, 114, 15);
+}
+
+#h-menu {
+	background: #595959;
+	height: 50px;
+	margin: 0px;
+}

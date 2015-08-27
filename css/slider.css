@@ -1,0 +1,8 @@
+#slider {
+	margin: 50px 10px;
+}
+
+#slider img {
+	position: absolute;
+	display: block;
+}
