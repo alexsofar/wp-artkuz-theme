@@ -2,7 +2,7 @@ $(function() {
 
 	// Изначально скрываю все изображения и индексирую 
 	$('#slider img').each(function(i) {
-		$(this).attr('index', i);
+		$(this).attr('index', i).hide();
 
 	});
 
