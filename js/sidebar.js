@@ -1,45 +1,30 @@
 $(function () {
-
     // Изначально скрываю все изображения и индексирую 
-    $('#slider img').each(function (i) {
+    var contextSlider = $('#slider');
+    contextSlider.find('img').each(function (i) {
         $(this).attr('index', i).hide();
-
     });
 
     // Но одно оставляю как старотовая картинка
-    var firstImg = $("#slider img:first");
-    var lastImg = $("#slider img:last");
+    var firstImg = contextSlider.find("img:first");
+    var lastImg = contextSlider.find("img:last");
     firstImg.show();
 
     // Генерация ссылок
-    $('#slider').append("<a href='#' id='arrowR' class='btn' name='arrowR'>>></a>");
-    $('#slider').prepend("<a href='#' id='arrowL' class='btn' name='arrowR'><<</a>");
-
-    // Функция для перехода к следующиему изображению
-    function nextImg() {
-        $('#slider img:visible').attr('id', 'currentImg');
-        $('#slider img:hidden').removeAttr('id');
-        $('#currentImg').fadeOut(1000).next().fadeIn(1000);
-        console.log($('#currentImg').attr('index'));
-    }
-
-    function prevImg() {
-        $('#slider img:visible').hide().prev().show();
-        $(this).hide();
-    }
+    contextSlider.append("<a href='#' id='arrowL' class='btn' name='arrowR'><<</a><a href='#' id='arrowR' class='btn' name='arrowR'>>></a>");
 
     // События мышы 
     $('#arrowR').click(function (e) {
         e.preventDefault();
-        nextImg();
+        var indexImg = contextSlider.find('img:visible').fadeOut(2000).next().fadeIn(2000).attr('index');
+        if (indexImg === undefined) firstImg.fadeIn(2000);
+        console.log(indexImg);
     });
 
     $('#arrowL').click(function (e) {
         e.preventDefault();
-        prevImg();
-        if ($('#slider img:visible').attr('src') === undefined)
-            lastImg.show();
-        console.log($('#slider img:visible').attr('src'));
+        var indexImg = contextSlider.find('img:visible').fadeOut(1000).prev().fadeIn(1000).attr('index');
+        if (indexImg === undefined) lastImg.fadeIn(1000);
     });
 
 });// End
