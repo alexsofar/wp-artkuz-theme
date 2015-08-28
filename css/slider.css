@@ -6,7 +6,13 @@
 	position: absolute;
 	display: block;
 }
-№arrowL {
+#arrowL {
         position: absolute;
-        top: 200px;
+        top: 210px;
+        right: 1270px;
+}
+#arrowR {
+        position: absolute;
+        top: 210px;
+        right: 430px;
 }
