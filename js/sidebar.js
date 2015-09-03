@@ -4,68 +4,41 @@ $(function () {
     contextSlider.find('img').each(function (i) {
         $(this).attr('index', i).hide();
     });
-
+    
+    $.fn.slider = function() {
+        var option = {
+            test: 'hello'
+        };
+        
+        this.test(function() {
+            return this.test;
+        });
+    };
+    
+    slider.test();
+    
     // Но одно оставляю как старотовая картинка
     var firstImg = contextSlider.find("img:first");
     var lastImg = contextSlider.find("img:last");
     firstImg.show();
-
+    $('img').hide;
     // Генерация ссылок
-    contextSlider.append("<a href='#' id='arrowL' class='btn' name='arrowR'><<</a><a href='#' id='arrowR' class='btn' name='arrowR'>>></a>");
+    contextSlider.append("<a href='#' id='ak-arrow-next' name='ak-arrow-next'><i id='ak-icon-chevron-right'></i></a><a href='#' id='ak-arrow-prev' name='ak-arrow-prev'><i id='ak-icon-chevron-left'></i></a>");
 
     // События мышы 
-    $('#arrowR').click(function (e) {
+    $('#ak-arrow-next').click(function (e) {
         e.preventDefault();
-        var indexImg = contextSlider.find('img:visible').fadeOut(2000).next().fadeIn(2000).attr('index');
-        if (indexImg === undefined) firstImg.fadeIn(2000);
-        console.log(indexImg);
+        var indexImg = contextSlider.find('img:visible').fadeOut(550).next().fadeIn(550).attr('index');
+        if (indexImg === undefined)
+            firstImg.fadeIn(550);
     });
 
-    $('#arrowL').click(function (e) {
+    $('#ak-arrow-prev').click(function (e) {
         e.preventDefault();
-        var indexImg = contextSlider.find('img:visible').fadeOut(1000).prev().fadeIn(1000).attr('index');
-        if (indexImg === undefined) lastImg.fadeIn(1000);
+        var indexImg = contextSlider.find('img:visible').fadeOut(550).prev().fadeIn(550).attr('index');
+        if (indexImg === undefined)
+            lastImg.fadeIn(550);
     });
+//    $('img').hide();
 
 });// End
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* АРХИВ
-
-$('#arrowR').click(function(e) {
-	e.preventDefault();
-	nextImg();
-	if ($('#slider img:visible').attr('src') == undefined) firstImg.fadeIn(1000);
-	console.log($('#slider img:visible').attr('src'));
-
-});
-
-*/

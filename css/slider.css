@@ -1,18 +1,64 @@
-#slider {
-	margin: 50px 10px;
-}
+@media only screen and (min-width: 800px) {
 
-#slider img {
-	position: absolute;
-	display: block;
-}
-#arrowL {
-        position: absolute;
-        top: 210px;
-        right: 1270px;
-}
-#arrowR {
-        position: absolute;
-        top: 210px;
-        right: 430px;
+    #slider {
+       position: relative;
+       height: 417px;
+       margin: 30px 0px 0px 0px; 
+       overflow: hidden;
+       clear: both;
+   }
+   #slider img {
+       max-width: 100%;
+       position: absolute;
+       height: auto;
+   }
+   
+   #ak-arrow-next {
+       position: absolute;
+       top: 40%;
+       right: 3%;
+   }
+   #ak-arrow-prev {
+       position: absolute;
+       top: 40%;
+       left: 3%;
+   }
+   #ak-arrow-next, #ak-arrow-prev{
+       background-color: #525252;
+       text-align: center;
+       opacity: 0.2;
+       border-radius: 6%;
+       width: 43px;
+       height: 72px;
+   }
+   /* ÐŸÑÐµÐ²Ð´Ð¾-ÑÐµÐ»ÐµÐºÑ‚Ð¾Ñ€Ñ‹*/
+   #ak-arrow-next:hover, #ak-arrow-prev:hover {
+       color: #faa732;
+       opacity: 0.7;
+   }
+   /* Ð˜ÐºÐ¾Ð½ÐºÐ¸ ÑÑ‚Ñ€ÐµÐ»Ð¾Ðº*/
+   #ak-icon-chevron-left, #ak-icon-chevron-right {   
+       margin: 29px 0px 0px 0px;
+       width: 14px;
+       height: 14px;
+       background-image: url("../img/wp-glyphicons-halflings-white.png");
+       background-repeat: no-repeat;
+       display: inline-block;
+       vertical-align: text-top;
+   }
+   #ak-icon-chevron-left {
+       background-position: -534px -107px;
+   }
+   #ak-icon-chevron-right {
+       background-position: -563px -107px;
+   }
+   #ak-discription-img {
+       background-color: #525252;
+       position: absolute;
+       display: none;
+       bottom: 0%;
+       width: 100%;
+       height: 22%;
+       opacity: 0.5;
+    }
 }
